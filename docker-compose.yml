@@ -1,0 +1,107 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/project
+    command: ["./build/server", "5555"]
+    ports:
+      - "5555:5555"
+    volumes:
+      - files_data:/usr/src/project/files
+    stdin_open: true
+    tty: true
+
+
+  cpp-client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/project
+    command: ["./build/client", "server", "5555"]
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+
+
+  py-client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/project
+    command: ["python3", "src/client.py", "server", "5555"]
+    depends_on:
+      - server
+    stdin_open: true
+    tty: true
+ 
+
+  asp-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.ForTests
+    working_dir: /usr/src/project
+    command: ["./build/tests/runTests"]
+
+
+  mvc-server:
+    build:
+      context: ./src/mvc_web_server
+      dockerfile: Dockerfile
+    working_dir: /usr/src/project
+    environment:
+      - CPP_SERVER_HOST=server
+      - CPP_SERVER_PORT=5555
+      - MONGO_URI=mongodb://mongo:27017/gdrive
+    command: ["node", "server.js"]
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+      - mongo
+    stdin_open: true
+    tty: true
+
+  mvc-client:
+    build:
+      context: ./src/my_react_app
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000" 
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000/api
+      - WDS_SOCKET_PORT=3001
+    depends_on:
+      - mvc-server
+    stdin_open: true
+    tty: true
+
+  mongo:
+    image: mongo:6
+    ports:
+     - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  mobile-app:
+    build:
+      context: ./src/mobile_app
+      dockerfile: Dockerfile
+    environment:
+      - BACKEND_PORT=3000
+      - REACT_NATIVE_PACKAGER_HOSTNAME=${HOST_IP}
+      - EXPO_PACKAGER_HOSTNAME=${HOST_IP}
+    ports:
+      - "8081:8081"
+      - "19000:19000"
+    volumes:
+      - ./src/mobile_app:/app
+      - /app/node_modules
+    depends_on:
+      - mvc-server
+    stdin_open: true
+    tty: true
+volumes:
+  files_data:
+  mongo_data:
