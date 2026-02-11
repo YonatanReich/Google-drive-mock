@@ -1,0 +1,47 @@
+.directory-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--content-bg);
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.path-link {
+    cursor: pointer;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.path-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #1a73e8;
+}
+
+.path-slash {
+    margin: 0 4px;
+    color: #9aa0a6;
+    user-select: none;
+}
+
+.back-btn {
+    margin-right: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 4px;
+    background: var(--bg-color-1);
+    border-radius: 8px 8px 8px 8px;
+}
+
+.back-btn.hover {
+    background: var(--hover-bg);
+}
+
+.h2 {
+    font-size: 20px;
+}

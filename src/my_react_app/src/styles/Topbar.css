@@ -1,0 +1,171 @@
+/* Topbar container */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--bg-color-2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+}
+
+/* Left section: logo + title */
+.topbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-logo {
+    width: 40px;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.topbar-title {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+/* Search form */
+.topbar-search-form {
+    flex: 1;
+    display: flex;
+    padding-right: 30px;
+    max-width: 1100px;
+    margin: 0 20px;
+}
+
+.topbar-search {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--bg-color-1);
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 14px;
+    color: var(--text-color);
+    background: var(--content-bg);
+}
+
+.topbar-search:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
+}
+
+.topbar-search-button {
+    border: none;
+    color: var(--text-color);
+    background: var(--bg-color-1);
+    padding: 0 12px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.topbar-search-button:hover {
+    background: var(--hover-bg);
+}
+
+/* Right section: user info */
+.topbar-user {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-username {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.topbar-user-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topbar-button {
+    margin-left: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    background: var(--content-bg);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+    margin-right: 10px;
+}
+
+.topbar-button:hover {
+    background: var(--hover-bg);
+}
+
+.theme-toggle button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    background: var(--content-bg);
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.theme-toggle button:hover {
+    background: var(--hover-bg);
+}
+
+.theme-toggle button.light.active {
+    background: #fffbea;
+    color: #000;
+}
+
+.theme-toggle button.dark.active {
+    background: #360640;
+    color: #fff;
+}
+
+.topbar-avatar {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.topbar-user-image {
+    /* Define transition here so it animates IN and OUT */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out !important;
+
+    /* Ensure it sits on top of any layers from the new 'File Details' feature */
+    position: relative !important;
+    z-index: 100 !important;
+    pointer-events: auto !important;
+}
+
+.topbar-user-image:hover {
+    transform: scale(1.1) !important;
+    filter: brightness(1.1) !important;
+    box-shadow: 0 0 15px rgba(0, 208, 255, 0.5) !important;
+}
+.profile-modal-container .modal-content {
+    background-color: #0F0F0F !important;
+    color: white !important;
+    border: none !important;
+}
+
+.profile-modal-container .modal-header {
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background-color: #0F0F0F !important;
+}
+
+.profile-modal-container .modal-body {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+

@@ -1,0 +1,63 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input,
+span,
+li {
+    font-family: 'Lato', sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+/*this is the default coloring for the first rendering of the program*/
+body {
+    --bg-color-1: #f5f5f5;
+    --bg-color-2: #e1e5eb;
+    --content-bg: #fbfafa;
+    --text-color: #000;
+    --active-color: #4285f4;
+    --hover-bg: #e0e0e0;
+    --file-bg: #fff;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme {
+    --bg-color-1: #f5f5f5;
+    --bg-color-2: #e1e5eb;
+    --content-bg: #fbfafa;
+    --text-color: #000;
+    --active-color: #4285f4;
+    --hover-bg: #e0e0e0;
+    --file-bg: #fff;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+body.dark-theme {
+    --bg-color-1: #220135;
+    --bg-color-2: #190028;
+    --content-bg: #3A015C;
+    --text-color: #d2d2d2;
+    --active-color: #7353ba;
+    --hover-bg: #a288e3;
+    --file-bg: #3c3c3c;
+    --box-shadow: 0 1px 3px rgba(202, 198, 198, 0.1);
+}
+
+::placeholder {
+    color: #CCCCCC !important;
+    opacity: 1 !important;
+}

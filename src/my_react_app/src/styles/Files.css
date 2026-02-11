@@ -1,0 +1,138 @@
+.files-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    background: var(--bg-color-2);
+}
+
+.sidebar {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+/* Content area */
+.files-content {
+    flex: 1;
+    overflow-y: auto;
+    border-top-left-radius: 30px;
+    background-color: var(--bg-color-1);
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.file-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.file-panel-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.view-toggle {
+    align-items: left;
+}
+
+.view-toggle button {
+    margin-left: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    color: var(--text-color);
+    background: var(--content-bg);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.view-toggle button:hover {
+    background: var(--hover-bg);
+}
+
+.view-toggle button.active {
+    background: var(--active-color);
+}
+
+/* THE OVERLAY: Covers the entire screen */
+.folder-modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    display: flex !important;
+    align-items: center !important;
+    /* Vertically Centers */
+    justify-content: center !important;
+    /* Horizontally Centers */
+    z-index: 9999 !important;
+}
+
+
+.folder-modal-card {
+    width: 450px !important;
+    max-width: 90% !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+
+.dark-theme .folder-modal-card {
+    background-color: #1a1a1a !important;
+    color: white !important;
+}
+
+.light-theme .folder-modal-card {
+    background-color: #ffffff !important;
+    color: #333 !important;
+}
+
+
+.folder-modal-input {
+    width: 100% !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    border-bottom: 2px solid #007bff !important;
+    margin-bottom: 20px !important;
+}
+
+.dark-theme .folder-modal-input {
+    color: white !important;
+}
+
+
+.folder-modal-footer {
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+}
+
+.folder-btn-primary {
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 25px !important;
+    border-radius: 25px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+}
+
+.folder-btn-secondary {
+    background: transparent !important;
+    color: #6c757d !important;
+    border: 1px solid #6c757d !important;
+    padding: 10px 25px !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+}
