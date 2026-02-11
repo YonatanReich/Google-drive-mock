@@ -1,0 +1,85 @@
+import { StyleSheet } from 'react-native';
+
+export const getStyles = (theme) => StyleSheet.create({
+    overlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    modal: {
+        width: '100%',
+        maxWidth: 400,
+        backgroundColor: theme.background,
+        borderRadius: 16,
+        padding: 24,
+        elevation: 5,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: theme.text,
+        marginBottom: 20,
+    },
+    input: {
+        width: '100%',
+        height: 50,
+        backgroundColor: theme.dark ? '#333' : '#f0f0f0',
+        borderRadius: 8,
+        paddingHorizontal: 15,
+        color: theme.text,
+        fontSize: 16,
+        marginBottom: 20,
+        borderWidth: 1,
+        borderColor: theme.dark ? '#444' : '#ddd',
+    },
+    accessRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 30,
+    },
+    btn: {
+        flex: 1,
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+        marginHorizontal: 5,
+        borderWidth: 1,
+        borderColor: theme.icon,
+    },
+    activeBtn: {
+        backgroundColor: theme.tint + '20',
+        borderColor: theme.tint,
+    },
+    btnText: {
+        color: theme.text,
+        fontWeight: '500',
+    },
+    activeBtnText: {
+        color: theme.tint,
+        fontWeight: 'bold',
+    },
+    actions: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        gap: 20,
+    },
+    cancelText: {
+        color: theme.icon,
+        fontSize: 16,
+        fontWeight: '600',
+    },
+    shareBtn: {
+        backgroundColor: theme.tint,
+        paddingVertical: 10,
+        paddingHorizontal: 25,
+        borderRadius: 8,
+    },
+});
