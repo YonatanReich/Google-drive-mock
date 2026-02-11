@@ -1,5 +1,4 @@
-# ASP_Main_Project_part_4
-
+# Google Drive Mock project:
 
 How to run the react app:
 -Open your favorite terminal and run the following command: docker-compose up --build server mvc-server mongo 
